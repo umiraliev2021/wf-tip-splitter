@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tip Splitter</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <main class="app">
+    <h1>Tip Splitter</h1>
+
+    <div class="field">
+      <label for="bill">Bill amount</label>
+      <input id="bill" name="bill" type="text" inputmode="decimal" autocomplete="off"
+        aria-describedby="bill-error">
+      <p id="bill-error" class="error" hidden></p>
+    </div>
+
+    <fieldset class="field tip">
+      <legend>Tip percentage</legend>
+      <div class="quick-tips">
+        <button type="button" class="quick-tip" data-tip="10" aria-pressed="false">10%</button>
+        <button type="button" class="quick-tip" data-tip="15" aria-pressed="true">15%</button>
+        <button type="button" class="quick-tip" data-tip="20" aria-pressed="false">20%</button>
+      </div>
+      <label for="custom-tip">Custom tip %</label>
+      <input id="custom-tip" name="custom-tip" type="text" inputmode="decimal" autocomplete="off"
+        aria-describedby="custom-tip-error">
+      <p id="custom-tip-error" class="error" hidden></p>
+    </fieldset>
+
+    <div class="field">
+      <label for="people">Number of people</label>
+      <input id="people" name="people" type="text" inputmode="numeric" autocomplete="off" value="1"
+        aria-describedby="people-error">
+      <p id="people-error" class="error" hidden></p>
+    </div>
+
+    <section class="results" aria-labelledby="results-heading" aria-live="polite">
+      <h2 id="results-heading">Results</h2>
+      <dl>
+        <div class="result">
+          <dt>Tip</dt>
+          <dd id="tip-amount">—</dd>
+        </div>
+        <div class="result">
+          <dt>Total</dt>
+          <dd id="total-amount">—</dd>
+        </div>
+        <div class="result result-main">
+          <dt>Per person</dt>
+          <dd id="per-person-amount">—</dd>
+        </div>
+      </dl>
+    </section>
+  </main>
+</body>
+</html>
